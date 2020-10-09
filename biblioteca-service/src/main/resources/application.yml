@@ -19,10 +19,11 @@ resilience4j.circuitbreaker:
       ignoreExceptions:
     get:
       registerHealthIndicator: true
-      ringBufferSizeInClosedState: 6
-      ringBufferSizeInHalfOpenState: 4
-      waitDurationInOpenState: 20s
-      failureRateThreshold: 60
+      ringBufferSizeInClosedState: 2
+      ringBufferSizeInHalfOpenState: 1
+      waitDurationInOpenState: 10s
+      failureRateThreshold: 5
+      automaticTransitionFromOpenToHalfOpenEnabled: true
 
 resilience4j.ratelimiter:
   instances:
@@ -34,8 +35,8 @@ resilience4j.ratelimiter:
 resilience4j.retry:
   instances:
     get:
-      maxRetryAttempts: 3
-      waitDuration: 5000
+      maxRetryAttempts: 1
+      waitDuration: 50
 
 resilience4j.bulkhead:
   instances:
