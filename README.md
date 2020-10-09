@@ -17,3 +17,5 @@ O retry permite que a API retente executar uma chamada externa que falhou divers
  - failureRateThreshold: estabelece o limite antes de ir para o circuito aberto.
  
  - waitDurationInOpenState: tempo que o dijuntos ficará aberto, antes de ir para o meio aberto.
+ 
+ - endpoint para monitorar se o circuito está aberto ou fechado: http://localhost:9090/actuator/health
