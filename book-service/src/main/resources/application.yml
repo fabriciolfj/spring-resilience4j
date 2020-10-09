@@ -1,0 +1,22 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: book
+  datasource:
+    url: jdbc:mysql://localhost:3306/books?createDatabaseIfNotExist=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  flyway:
+    locations:
+      - classpath:db/migration
+      - classpath:db/testdata
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL57Dialect
+    hibernate:
+      ddl-auto: 'none'
+    generate-ddl: true
+    show-sql: true
